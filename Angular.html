@@ -1,0 +1,83 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<h2 align="center"> Sample Angular Page </h2>
+</head>
+<body>
+<!-- <div ng-app="firstApp" ng-controller="firstController" ng-init="name='SUNNY BOHRA';age=25;hobby=['Cricket','Football','TT'];count=0"> -->
+<!--
+<div ng-app="firstApp">
+	Name : <input type="text" ng-model="name" ><br/><br/>
+	Age : <input type="text" ng-model="age" ><br/><br/>
+	Hobby : <select ng-model="hobby">
+		 <option value="C">Cricket</option>
+		 <option value="F">Football</option>
+		 <option value="T">TT</option>
+	</select>
+
+
+	<p ng-bind="name"></p>
+	<p ng-bind="age"></p>
+	<div ng-switch="hobby">
+		<div ng-switch-when="C">
+			<p>Cricket</p>
+		</div>
+		<div ng-switch-when="F">
+			<p>Football</p>
+		</div>
+		<div ng-switch-when="T">
+			<p>TT</p>		
+		</div>
+	</div>
+
+	<button ng-click="count=count+1" >{{count}}</button> 
+</div>
+-->
+<div ng-app="firstApp">
+	<div  ng-controller="firstController" ng-init="url='https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg'">
+		Name : <input type="text" style="border:1px solid;border-radius:5px" ng-model="name"><br><br>
+		Age : <input type="text" style="border:1px solid;border-radius:5px" ng-model="age"><br><br>
+		Hobby : <input type="text" style="border:1px solid;border-radius:5px;border" ng-model="hobby"><br><br>
+		<p>{{name}}	</p>
+		<p>{{age}}	</p>
+		<p>{{hobby}}	</p>
+
+
+		<input type="button" ng-click="Submit()" value="Submit"/>
+		<br>
+		<br>
+		To View Image: 
+	 <input type="checkbox" ng-model="myVar">
+
+     <image ng-show="myVar" ng-click="SubmitName()" src={{url}}></image>
+  
+
+		
+	</div>
+</div>
+
+<script>
+
+ function data($scope){
+ 	$scope.name="Joe";
+ 	$scope.age=26;
+ 	$scope.hobby="playing";
+ 	$scope.Submit = function(){
+ 		if($scope.name.length != 0)
+ 		{
+ 			alert("Not Proper data");
+ 		}
+ 		else
+ 		{
+ 			alert("Not Proper data");
+ 		}
+ 	}
+ $scope.SubmitName =function(){
+ 	alert("My Name is Joe");
+ }	
+ }	
+ var module = angular.module("firstApp",[]);
+ module.controller("firstController",data);
+</script>	
+</body>
+</html>
